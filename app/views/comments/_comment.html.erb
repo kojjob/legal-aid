@@ -1,0 +1,15 @@
+
+<div class="well">
+  <p class="text-muted">Added by <strong><%= comment.commenter %></strong>
+    <p><%= time_ago_in_words(@legal.created_at) %> ago </p>
+  <blockquote>
+    <p><%= comment.body %></p>
+  </blockquote>
+
+
+<p>
+  <%= link_to 'Destroy Comment', [comment.legal, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' },class: 'btn btn-danger btn-xs' %>
+</p>
+</div>

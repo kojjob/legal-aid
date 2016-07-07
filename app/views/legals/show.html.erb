@@ -1,14 +1,13 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8 col-md-4">
+    <div class="col-md-9">
       <p id="notice"><%= notice %></p>
       <div class="blog-header">
-          <h1 class="blog-title"><%= @legal.title %></h1>
-          <h3 class="lead blog-description">Someone Somewhere cares and Willing to Help.</h3>
+          <h2 class="blog-title"><%= @legal.title %></h2>
+          <h4 class="lead blog-description">Someone Somewhere cares and Willing to Help.</h4>
         </div>
-        <hr>
           <div class="blog-post">
-            <p class="blog-post-meta">Posted by<%= time_ago_in_words(@legal.created_at) %> ago </p>
+            <p class="blog-post-meta">Posted by: Nulla <%= time_ago_in_words(@legal.created_at) %> ago </p>
              <p><%= @legal.report %>.</p>
           </div><!-- /.blog-post -->
         <br>
@@ -19,11 +18,13 @@
             <h2>Comments</h2>
           <%= render @legal.comments %>
         </p>
-
-        <%= link_to 'Edit', edit_legal_path(@legal), class:'btn-button1' %>
-        <%= link_to 'Back', legals_path, class:'btn-button1' %>
+          <nav>
+            <ul class="pager">
+              <li><%= link_to 'Back', root_path %></li>
+              <li><%= link_to 'Edit', edit_legal_path(@legal) %></li>
+            </ul>
+          </nav>
       </div>
   </div>
 </div>
-
 

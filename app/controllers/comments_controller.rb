@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+    before_action :authenticate_user!
+
 
   def create
     @legal = Legal.find(params[:legal_id])

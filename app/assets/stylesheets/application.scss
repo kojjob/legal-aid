@@ -37,6 +37,15 @@ h6, .h6 {
   color: #333;
 }
 
+p, ol, .p {
+    font-size: 18px;
+    line-height: 36px;
+    font-family: 'Mercury SSm A', 'Mercury SSm B', Georgia, serif;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0.003em;
+}
+
 /*
  * Override Bootstrap's default container.
  */
@@ -64,9 +73,21 @@ h6, .h6 {
 
 /* Nav links */
 
+.navbar {
+  background-color:#0dc9f7;
+  color:#fff;
+}
+
 .navbar-brand {
   font-size:2em;
+  color:#ffffff !important;
 }
+
+.navbar-inverse .navbar-nav > li > a {
+    color:#ffffff; 
+    font-size:1.2em;
+}
+
 .blog-nav-item {
   position: relative;
   display: inline-block;
@@ -157,6 +178,24 @@ h6, .h6 {
   text-align: center;
   border-radius: 30px;
 }
+.pager li > a:hover, .pager li > a:focus {
+    text-decoration: none;
+    background-color: #0dc9f7;
+}
+a {
+  color:#ffffff;
+  text-decoration: none;
+  font-weight:bold;
+}
+
+
+.pager li > a, .pager li > span {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #5bc0de;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+}
 
 
 /*
@@ -191,3 +230,9 @@ h6, .h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+// .btn:hover {
+//     background-color: #4dbfdb;
+//     text-decoration: none;
+//     color: #fff;
+// }

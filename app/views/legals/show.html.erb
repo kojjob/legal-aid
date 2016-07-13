@@ -18,12 +18,16 @@
             <h2>Comments</h2>
           <%= render @legal.comments %>
         </p>
+        <% if user_signed_in? %>
+        <% if @legal.user_id == current_user.id  %>
           <nav>
             <ul class="pager">
               <li><%= link_to 'Back', root_path %></li>
               <li><%= link_to 'Edit', edit_legal_path(@legal) %></li>
             </ul>
           </nav>
+          <% end %>
+          <% end %>
       </div>
   </div>
 </div>

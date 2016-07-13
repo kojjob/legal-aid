@@ -6,10 +6,13 @@
     <p><%= comment.body %></p>
   </blockquote>
 
-
+<% if user_signed_in? %>
+<% if @legal.user_id == current_user.id  %>
 <p>
   <%= link_to 'Destroy Comment', [comment.legal, comment],
                method: :delete,
                data: { confirm: 'Are you sure?' },class: 'btn btn-danger btn-xs' %>
 </p>
+<% end %>
+<% end %>
 </div>

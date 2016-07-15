@@ -1,13 +1,13 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Cases</h1>
-    <% @legals.each do |legal| %>
-  <h3><%= link_to legal.title, legal %></h3>
-    <h5 class="text-muted">Added by </h5>
-      <h4><%= time_ago_in_words(legal.created_at) %> ago </h4>
-     <%= link_to 'Show', legal %>
-     <%= link_to 'Edit', edit_legal_path(legal) %>
-     <%= link_to 'Destroy', legal, method: :delete, data: { confirm: 'Are you sure?' } %>
-     <hr>
+<div id="posts">
+    <h1 class= "index-page">Cases</h1>
+      <% @legals.each do |legal| %>
+      <h2 class="title"><%= link_to legal.title, legal %></h2>
+      <p class="date">
+        <%= truncate(legal.report, length:100)%><br>
+        Published at:
+        <%= time_ago_in_words(legal.created_at) %> ago
+      </p> 
+      <hr>
     <% end %>
-<br>
+</div>
+

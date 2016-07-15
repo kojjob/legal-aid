@@ -1,34 +1,21 @@
-<div class="container">
-  <div class="row">
-    <div class="col-md-9">
-      <p id="notice"><%= notice %></p>
-      <div class="blog-header">
-          <h2 class="blog-title"><%= @legal.title %></h2>
-          <h4 class="lead blog-description">Someone Somewhere cares and Willing to Help.</h4>
-        </div>
-          <div class="blog-post">
-            <p class="blog-post-meta">Posted by: Nulla <%= time_ago_in_words(@legal.created_at) %> ago </p>
-             <p><%= @legal.report %>.</p>
-          </div><!-- /.blog-post -->
-        <br>
-        <hr>
-        <p>
-           <h2>Add a comment:</h2>
-          <%= render 'comments/form' %>
-            <h2>Comments</h2>
-          <%= render @legal.comments %>
-        </p>
-        <% if user_signed_in? %>
-        <% if @legal.user_id == current_user.id  %>
-          <nav>
-            <ul class="pager">
-              <li><%= link_to 'Back', root_path %></li>
-              <li><%= link_to 'Edit', edit_legal_path(@legal) %></li>
-            </ul>
-          </nav>
-          <% end %>
-          <% end %>
-      </div>
-  </div>
+<div id="post_content">
+  <h2 class="blog-title"><%= @legal.title %></h2>
+    <h4 class="lead blog-description">Someone Somewhere cares and Willing to Help.</h4>
+      <p class="date">Posted by: Nulla <%= time_ago_in_words(@legal.created_at) %> ago </p>
+           <p><%= @legal.report %>.</p>
+
+    <div id="comments">
+      <h2><%= @legal.comments.count%></h2>
+        <span>Comments</span>   
+        <%= render @legal.comments %>
+      
+      <h3>Reply to thread:</h3>
+      <%= render 'comments/form' %>
+    </div>
+    <br>
+    <hr>
+    <br>
+      <%= link_to 'Back', root_path, class: "button" %>
+      <%= link_to 'Edit', edit_legal_path(@legal), class: "button" %>
 </div>
 

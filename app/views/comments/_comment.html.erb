@@ -1,18 +1,15 @@
-
-<div class="well">
-  <p class="text-muted">Added by <strong><%= comment.commenter %></strong>
-    <p><%= time_ago_in_words(@legal.created_at) %> ago </p>
-  <blockquote>
-    <p><%= comment.body %></p>
-  </blockquote>
-
-<% if user_signed_in? %>
-<% if @legal.user_id == current_user.id  %>
-<p>
-  <%= link_to 'Destroy Comment', [comment.legal, comment],
-               method: :delete,
-               data: { confirm: 'Are you sure?' },class: 'btn btn-danger btn-xs' %>
-</p>
-<% end %>
-<% end %>
+<div class="comment clearfix">
+    <div class="content">
+      <p class="comment_author"><%= time_ago_in_words(@legal.created_at) %> ago </p>
+      <p class="comment_content"><%= comment.body %></p> 
+  </div>
 </div>
+
+  <% if user_signed_in? %>
+  <% if @legal.user_id == current_user.id  %>
+  <div class="buttons">
+    <%= link_to "Edit", edit_post_comment_path(comment.legal, comment) %> 
+    <%= link_to "Delete", [comment.legal, comment], method: :delete, data: { confirm: "Are you sure?" } %>
+  </div>
+  <% end %>
+<% end %>

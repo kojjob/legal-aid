@@ -1,26 +1,28 @@
-<%= form_for(legal) do |f| %>
-  <% if legal.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(legal.errors.count, "error") %> prohibited this legal from being saved:</h2>
+<div class="col-md-10 col-md-offset-1">
+  <%= form_for(legal) do |f| %>
+    <% if legal.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(legal.errors.count, "error") %> prohibited this legal from being saved:</h2>
 
-      <ul>
-      <% legal.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% legal.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control' %>
     </div>
+    <div class="form-group">
+      <%= f.label :report %>
+      <%= f.text_area :report, size:'150x20' , class: 'form-control' %>
+    </div>
+    <br>
+      <%= f.submit  class: 'btn btn-default btn-sm', class: "button"%>
+      <%= link_to 'Show', @legal, class: "button" %> 
+      <%= link_to 'Back', legals_path, class: "button" %>
   <% end %>
-
-  <div class="form-group">
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :report %>
-    <%= f.text_area :report, size:'150x20' , class: 'form-control' %>
-  </div>
-  <br>
-  <div class="actions">
-    <%= f.submit  class: 'btn btn-default btn-sm'%>
-  </div>
-<% end %>
+</div>

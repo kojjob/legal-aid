@@ -1,13 +1,11 @@
-<div id="posts">
-    <h1 class= "index-page">Cases</h1>
-      <% @legals.each do |legal| %>
-      <h2 class="title"><%= link_to legal.title, legal %></h2>
-      <p class="date">
-        <%= truncate(legal.report, length:100)%><br>
-        Published at:
-        <%= time_ago_in_words(legal.created_at) %> ago
-      </p> 
-      <hr>
-    <% end %>
+<div class="container">
+  <% @legals.each do |legal| %>
+  <table>
+    <tbody>
+      <tr>
+        <td><h2><%= link_to legal.title, legal %></h2></td>
+      </tr>
+    </tbody>
+  </table>
+  <% end %>
 </div>
-

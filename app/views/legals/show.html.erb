@@ -1,11 +1,11 @@
 <div id="post_content">
-  <h2 class="blog-title"><%= @legal.title %></h2>
-    <h4 class="lead blog-description">Someone Somewhere cares and Willing to Help.</h4>
-      <p class="date">Posted by: Nulla <%= time_ago_in_words(@legal.created_at) %> ago </p>
-           <p><%= @legal.report %>.</p>
+  <h1 class="blog-title"><%= @legal.title %></h1>
+    <p class="date">Posted by: Nulla <%= time_ago_in_words(@legal.created_at) %> ago </p>
+      <p><%= @legal.report %>.</p>
+<hr>           
 
     <div id="comments">
-      <h2><%= @legal.comments.count%></h2>
+      <h4><%= @legal.comments.count%></h4>
         <span>Comments</span>   
         <%= render @legal.comments %>
       
@@ -13,7 +13,6 @@
       <%= render 'comments/form' %>
     </div>
     <br>
-    <hr>
     <br>
       <%= link_to 'Back', root_path, class: "button" %>
       <%= link_to 'Edit', edit_legal_path(@legal), class: "button" %>

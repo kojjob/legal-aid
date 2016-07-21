@@ -45,8 +45,9 @@ body {
   width: 100%;
   margin: 0 auto;
   background: white;
-  #logo {
+  .navbar-brand {
     float: left;
+    font-size: 4.0rem;
     a {
       text-transform:capitalize;
       font-weight:100;
@@ -117,9 +118,9 @@ body {
   }
   p {
     color:iron;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: 100;
-    line-height: 1.5;
+    line-height: 1.6em;
   }
   #comments {
     .comment {

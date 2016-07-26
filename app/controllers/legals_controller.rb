@@ -1,5 +1,6 @@
 class LegalsController < ApplicationController
   before_action :set_legal, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /legals
   # GET /legals.json
@@ -14,7 +15,7 @@ class LegalsController < ApplicationController
 
   # GET /legals/new
   def new
-    @legal = Legal.new
+    @legal = current_user.legals.build
   end
 
   # GET /legals/1/edit
@@ -24,7 +25,7 @@ class LegalsController < ApplicationController
   # POST /legals
   # POST /legals.json
   def create
-    @legal = Legal.new(legal_params)
+    @legal = current_user.legals.build(legal_params)
 
     respond_to do |format|
       if @legal.save

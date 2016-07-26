@@ -1,8 +1,10 @@
 <div id="post_content">
   <h1 class="blog-title"><%= @legal.title %></h1>
-    <p class="date">Posted by: Nulla <%= time_ago_in_words(@legal.created_at) %> ago </p>
-      <p><%= @legal.report %>.</p>
-<hr>           
+    <h6 class="date">
+      Posted by <%= @legal.user.name %>,
+      <%= time_ago_in_words(@legal.created_at) %> ago 
+    </h6>
+        <p><%= simple_format(@legal.report) %></p>
 
     <div id="comments">
       <h4><%= @legal.comments.count%></h4>
@@ -14,7 +16,12 @@
     </div>
     <br>
     <br>
+  <% if user_signed_in? %>
+    <% if @legal.user_id == current_user.id  %>
       <%= link_to 'Back', root_path, class: "button" %>
       <%= link_to 'Edit', edit_legal_path(@legal), class: "button" %>
+      <%= link_to "Delete", legal_path, method: :delete, data: { confirm: 'Are you sure?' },class: "button" %>
+    <% end %>
+  <% end %>
 </div>
 

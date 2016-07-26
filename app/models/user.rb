@@ -5,4 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
    has_many :legals      
    has_many :comments
+
+   # # validates :name, presence: true, uniqueness: 
+   #           {case_sensitive: false}, length: {minimum: 3, maximum: 25 }
+   
+   VALID_EMAIL_REGEX = /\A([\w+\-]\.?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i
+          
 end

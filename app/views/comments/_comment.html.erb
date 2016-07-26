@@ -8,7 +8,7 @@
   <% if user_signed_in? %>
   <% if @legal.user_id == current_user.id  %>
   <div class="buttons">
-    <%= link_to "Edit", edit_post_comment_path(comment.legal, comment) %> 
+    <%= link_to "Edit", edit_legal_comment_path(comment.legal, comment) %> 
     <%= link_to "Delete", [comment.legal, comment], method: :delete, data: { confirm: "Are you sure?" } %>
   </div>
   <% end %>

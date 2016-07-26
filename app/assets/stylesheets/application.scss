@@ -19,7 +19,7 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  background: #dfdfdf;
+  background: #F7FBFC;
  }
 
  h2 {
@@ -30,6 +30,21 @@ body {
   width: 75%;
   max-width: 1140px;
   margin: 0 auto;
+  padding-top: 30px;
+
+}
+
+.navbar.navbar-default {
+  background-color: #ffffff;
+}
+
+.navbar-brand {
+  font-size:2.7rem;
+}
+
+a {
+  font-size:1.7rem;
+   color:#397cac!important ;
 }
 
 .clearfix:before, .clearfix:after {
@@ -45,18 +60,7 @@ body {
   width: 100%;
   margin: 0 auto;
   background: white;
-  .navbar-brand {
-    float: left;
-    font-size: 4.0rem;
-    a {
-      text-transform:capitalize;
-      font-weight:100;
-      letter-spacing: -1px;
-      font-size: 2.0rem;
-      text-decoration: none;
-      color:#397CAC;
-    }
-  }
+
   #buttons {
     float: right;
     a {
@@ -107,6 +111,7 @@ body {
 }
 
 #post_content {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background: white;
   padding: 2em 5%;
   border-radius: .5em;

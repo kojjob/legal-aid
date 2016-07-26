@@ -1,11 +1,25 @@
-<div class="container">
+<table class="table table-hover table-responsive ">
+  <div class="container">
+  <thead>
+    <tr>
+      <th><h3>Topic</h3></th>
+      <th><h3>Posts</h3></th>
+      <th><h3>Last Poster</h3></th>
+      <th><h3>Activiteis</h3></th>
+    </tr>
+  </thead>
+  <tbody>
   <% @legals.each do |legal| %>
-  <table>
-    <tbody>
-      <tr>
-        <td><h2><%= link_to legal.title, legal %></h2></td>
-      </tr>
-    </tbody>
-  </table>
+    <tr>
+      <td><h4><%= link_to legal.title, legal %></h4></td>
+      <td><h4><%= time_ago_in_words(legal.created_at) %> ago</h4></td>
+      <td><h4><%= %></h4></td>
+      <td><h4><%= time_ago_in_words(legal.updated_at) %> ago</h4></td>
+    </tr>
+  </tbody>
   <% end %>
-</div>
+  </div>
+</table>
+
+
+

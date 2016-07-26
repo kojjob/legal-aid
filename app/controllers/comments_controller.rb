@@ -1,10 +1,13 @@
 class CommentsController < ApplicationController
 
-
   def create
     @legal = Legal.find(params[:legal_id])
     @comment = @legal.comments.create(comment_params)
-    redirect_to legal_path(@legal)
+    if @comment.save
+      redirect_to legal_path(@legal)
+    else
+      render 'new'
+    end
   end
 
   def destroy
